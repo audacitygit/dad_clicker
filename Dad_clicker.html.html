@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad Clicker - The Coffee Quest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ Dad Clicker ☕</h1>
+            <p class="subtitle">Help Dad stay awake!</p>
+        </header>
+
+        <!-- Mobile Tab Navigation -->
+        <div class="mobile-tabs">
+            <button class="tab-btn active" data-tab="clicker">🎮 Clicker</button>
+            <button class="tab-btn" data-tab="upgrades">☕ Upgrades</button>
+            <button class="tab-btn" data-tab="cosmetics">👔 Style</button>
+            <button class="tab-btn" data-tab="achievements">🏆 Stats</button>
+        </div>
+
+        <div class="main-content">
+            <!-- Left Panel - Upgrades -->
+            <div class="left-panel tab-content" data-tab-content="upgrades">
+                <h2>👆 Click Upgrades</h2>
+                <div id="click-upgrades-container" class="upgrades-container"></div>
+                
+                <h2 style="margin-top: 30px;">🏭 Production Upgrades</h2>
+                <div id="upgrades-container" class="upgrades-container"></div>
+            </div>
+            
+            <!-- Cosmetics Panel -->
+            <div class="left-panel cosmetics-panel tab-content" data-tab-content="cosmetics">
+                <h2>👔 Dad's Style Shop</h2>
+                <p style="color: #666; margin-bottom: 10px; font-size: 0.9em;">Customize Dad's appearance! Click owned items to equip/unequip.</p>
+                <p style="color: #8a2be2; margin-bottom: 20px; font-size: 0.9em; font-weight: bold;">💎 Collect falling gems to buy styles! Gems spawn every 90 seconds.</p>
+                <div id="cosmetics-container" class="cosmetics-container"></div>
+            </div>
+
+            <!-- Center Panel - Clicker -->
+            <div class="center-panel tab-content active" data-tab-content="clicker">
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="energy-count">0</div>
+                        <div class="stat-label">Energy</div>
+                    </div>
+                    <div class="stat-item stat-item-gems">
+                        <div class="stat-value" id="gems-count">0</div>
+                        <div class="stat-label">💎 Gems</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="energy-per-second">0</div>
+                        <div class="stat-label">Energy per second</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="click-power">1</div>
+                        <div class="stat-label">Click Power</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="click-multiplier">1x</div>
+                        <div class="stat-label">Style Multiplier</div>
+                    </div>
+                </div>
+
+                <div class="click-area">
+                    <div id="dad-clicker" class="dad-clicker">
+                        <div class="dad-face">
+                            <div class="eyes">
+                                <div class="eye left-eye">
+                                    <div class="pupil"></div>
+                                </div>
+                                <div class="eye right-eye">
+                                    <div class="pupil"></div>
+                                </div>
+                            </div>
+                            <div class="mouth">😴</div>
+                        </div>
+                        <div class="coffee-cup">
+                            <div class="cup-body">☕</div>
+                            <div class="steam">
+                                <span class="steam-particle">~</span>
+                                <span class="steam-particle">~</span>
+                                <span class="steam-particle">~</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="click-hint">Click Dad to give him energy!</p>
+                </div>
+
+                <div class="controls">
+                    <button id="save-btn" class="control-btn">💾 Save Game</button>
+                    <button id="reset-btn" class="control-btn danger">🔄 Reset Game</button>
+                </div>
+            </div>
+
+            <!-- Right Panel - Stats -->
+            <div class="right-panel tab-content" data-tab-content="achievements">
+                <h2>📊 Stats</h2>
+                <div class="stats-list">
+                    <div class="stat-row">
+                        <span>Total Clicks:</span>
+                        <span id="total-clicks">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Total Energy:</span>
+                        <span id="total-energy">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Click Power:</span>
+                        <span id="click-power">1</span>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 30px;">🏆 Achievements</h3>
+                <div id="achievements-container" class="achievements-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Click effect container -->
+    <div id="click-numbers"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
